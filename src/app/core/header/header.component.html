@@ -1,0 +1,23 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <ng-template *ngIf="bio$ | async as bio" routerLink="/">
+      <a class="navbar-item">{{ bio.firstName }}</a>
+      <a class="navbar-item">{{ bio.lastName }}</a>
+    </ng-template>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarMenu" class="navbar-menu">
+    <div class="navbar-end">
+      <button type="button" class="button is-outlined is-dark has-text-weight-bold"
+        *ngFor="let item of menuItems"
+        [routerLink]="(isHome$ | async) ? item.homePath : item.pagePath"
+        [fragment]="(isHome$ | async) ? item.fragment : ''">{{ item.title }}</button>
+    </div>
+  </div>
+</nav>
