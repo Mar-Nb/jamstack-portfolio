@@ -5,7 +5,7 @@
 
   <div class="is-flex vw-90"
     [ngClass]="{'is-justify-content-center is-flex-wrap-wrap': !options.displayInColumn, 'is-flex-direction-column is-align-items-center': options.displayInColumn}">
-    <div *ngFor="let page of links$ | async" class="card post-card m-3">
+    <div *ngFor="links$ | async as page" class="card post-card m-3">
       <div class="card-image has-background-black">
         <i class="far fa-newspaper fa-4x m-5 has-text-white"></i>
       </div>

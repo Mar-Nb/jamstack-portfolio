@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   bio$ = this.bioService.getBio();
 
   respOptions = [
-    { viewClasses: "is-hidden is-flex-tablet", headingClass: "is-size-5", useSmallerHeadings: false },
+    { viewClasses: "is-hidden-touch is-flex-tablet", headingClass: "is-size-1", useSmallerHeadings: false },
     { viewClasses: "is-flex is-hidden-tablet", headingClass: "", useSmallerHeadings: true }
   ];
 

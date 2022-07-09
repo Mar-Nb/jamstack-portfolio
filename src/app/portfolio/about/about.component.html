@@ -1,5 +1,5 @@
 <div class="is-flex is-justify-content-center vw-90 mx-auto" *ngIf="bio$ | async as bio">
-  <div class="is-flex-direction-column is-align-content-center has-text-centered width-75">
+  <div *ngFor="let options of respOptions" [ngClass]="options.viewClasses" class="is-flex-direction-column is-align-content-center has-text-justified">
     <h1 [ngClass]="options.headingClass" class="mb-5">
       <span class="has-text-weight-bold">About</span>
     </h1>
