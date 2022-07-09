@@ -1,0 +1,56 @@
+<div class="is-flex-direction-column is-align-content-center has-text-centered vw-90 mx-auto"
+  *ngFor="let options of respOptions"
+  [ngClass]="options.viewClasses">
+  <h1 [ngClass]="options.titleClasses" class="mb-5">
+    <span class="has-text-weight-bold">My</span> Projects
+  </h1>
+
+  <div class="is-flex vw-90"
+    [ngClass]="{'is-justify-content-center is-flex-wrap-wrap': !options.displayInColumn, 'is-flex-direction-column is-align-items-center': options.displayInColumn}"
+    *ngIf="projects$ | async as projects">
+    <div *ngFor="let project of projects" class="card project-card m-3"
+      [ngClass]="{'m-3': !options.displayInColumn, 'mb-3': options.displayInColumn}">
+      <header class="card-header">
+        <h5 class="card-header-title has-text-weight-bold has-text-left project-title" [title]="project.name">
+          {{ project.name }}
+        </h5>
+      </header>
+
+      <div class="card-content">
+        <h6 class="mb-2 has-text-left has-text-weight-light">
+          <span class="icon-text">
+            <span class="icon"><i [ngClass]="project.stack.iconClasses"></i></span>
+            <span>{{ project.stack.name }}</span>
+          </span>
+        </h6>
+
+        <div class="content has-text-left">
+          {{ project.description }}
+        </div>
+
+        <footer class="card-footer">
+          <a [href]="project.previewUrl" *ngIf="project.previewUrl" class="card-footer-item is-dark">
+            <span class="icon-text">
+              <span class="icon"><i class="far fa-eye"></i></span>
+              <span>Preview</span>
+            </span>
+          </a>
+
+          <a [href]="project.sourceUrl" *ngIf="project.sourceUrl" class="card-footer-item is-dark">
+            <span class="icon-text">
+              <span class="icon"><i class="fab fa-github-alt"></i></span>
+              <span>Source</span>
+            </span>
+          </a>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <button *ngIf="isHome$ | async" routerLink="/projects" class="mt-3 button is-dark">
+    <span class="icon-text">
+      <span class="icon"><i class="fas fa-angle-right"></i></span>
+      <span>See More Projects</span>
+    </span>
+  </button>
+</div>

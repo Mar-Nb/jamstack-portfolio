@@ -1,0 +1,28 @@
+<div class="is-flex is-flex-direction-column is-justify-content-center is-align-content-center" *ngIf="bio$ | async as bio">
+  <div class="is-flex is-flex-direction-column min-vh-95 is-justify-content-center is-align-content-center">
+    <div *ngFor="let options of respOptions" [ngClass]="options.viewClasses"
+      class="is-flex-direction-column is-justify-content-center is-align-content-start">
+      <h1 [ngClass]="options.headingClass" class="has-text-left">
+        Hello, 👋🏾. My name is <span class="has-text-weight-bold">{{ bio.firstName + " " + bio.lastName }}</span>.
+      </h1>
+
+      <div *ngFor="let par of bio.intro">
+        <h2 class="has-text-weight-left" *ngIf="! options.useSmallerHeadings">{{ par }}</h2>
+        <h5 class="has-text-weight-left" *ngIf="options.useSmallerHeadings">{{ par }}</h5>
+      </div>
+
+      <button class="mt-3 mb-5 button is-outlined is-dark" routerLink="/" fragment="projects">
+        <span>See my work</span>
+        <span class="icon is-small">
+          <i class="fas fa-angle-right"></i>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <div class="is-hidden is-tablet-block mt-5"></div>
+  <!-- <app-about id="about" class="mb-3"></app-about> -->
+
+  <div class="is-hidden is-tablet-block mt-5"></div>
+  <!-- <app-projects id="projects" class="mb-5"></app-projects> -->
+</div>
