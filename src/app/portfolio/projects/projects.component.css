@@ -1,15 +1,11 @@
-.vw-20 {
-  width: 20vw;
-}
+.vw-20 { width: 20vw; }
 
-.project-card {
-  width: 290px;
-  height: 250px;
-}
+.project-card { width: 290px; }
 
-.project-title {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 20ch;
+.button:hover { transition: 0.5s ease-in-out; }
+
+.card-footer-item:hover {
+  background-color: hsl(0, 0%, 21%);
+  color: hsl(0, 0%, 100%) !important;
+  transition: 0.5s;
 }

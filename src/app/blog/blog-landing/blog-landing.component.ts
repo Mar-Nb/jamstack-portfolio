@@ -14,8 +14,8 @@ export class BlogLandingComponent implements OnInit {
   );
 
   respOptions = [
-    { viewClasses: 'is-hidden is-flex-tablet', displayInColumn: false, titleClasses: 'is-size-3' },
-    { viewClasses: 'is-flex-tablet is-hidden', displayInColumn: true, titleClasses: '' }
+    { viewClasses: 'is-hidden-touch is-flex-tablet', displayInColumn: false, titleClasses: 'is-size-2' },
+    { viewClasses: 'is-flex is-hidden-tablet', displayInColumn: true, titleClasses: 'is-size-4' }
   ];
 
   constructor(private scully: ScullyRoutesService) { }

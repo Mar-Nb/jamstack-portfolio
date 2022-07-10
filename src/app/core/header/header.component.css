@@ -1,3 +1,5 @@
-.navbar-end button:hover {
-  text-decoration: underline !important;
+.navbar-menu .navbar-item:hover {
+  background-color: hsl(0, 0%, 21%);
+  color: hsl(0, 0%, 100%);
+  transition: 0.5s;
 }

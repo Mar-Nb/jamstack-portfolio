@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   respOptions = [
     { viewClasses: "is-hidden-touch is-flex-tablet", headingClass: "is-size-1", useSmallerHeadings: false },
-    { viewClasses: "is-flex is-hidden-tablet", headingClass: "", useSmallerHeadings: true }
+    { viewClasses: "is-flex is-hidden-tablet", headingClass: "is-size-4", useSmallerHeadings: true }
   ];
 
   constructor(private bioService: BioService) { }

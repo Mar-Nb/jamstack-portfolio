@@ -17,7 +17,7 @@ export class ProjectsComponent implements OnInit {
 
   respOptions = [
     { viewClasses: "is-hidden-touch is-flex-tablet", titleClasses: "is-size-1", useSmallerHeadings: false, displayInColumn: false},
-    { viewClasses: "is-flex is-hidden-tablet", titleClasses: "", useSmallerHeadings: true, displayInColumn: true }
+    { viewClasses: "is-flex is-hidden-tablet", titleClasses: "is-size-4", useSmallerHeadings: true, displayInColumn: true }
   ];
 
   constructor(private projectsService: ProjectsService, private headerService: HeaderService) { }

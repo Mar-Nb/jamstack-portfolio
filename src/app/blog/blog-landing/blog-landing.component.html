@@ -1,29 +1,32 @@
 <div *ngFor="let options of respOptions"
   [ngClass]="options.viewClasses"
-  class="is-flex-direction-column is-align-items-center has-text-centered vw-90 mx-auto">
+  class="is-flex-direction-column is-align-items-center has-text-centered mx-auto">
   <h1 [ngClass]="options.titleClasses" class="mb-5"><span class="has-text-weight-bold">Jane's</span> Blog</h1>
 
   <div class="is-flex vw-90"
     [ngClass]="{'is-justify-content-center is-flex-wrap-wrap': !options.displayInColumn, 'is-flex-direction-column is-align-items-center': options.displayInColumn}">
-    <div *ngFor="links$ | async as page" class="card post-card m-3">
-      <div class="card-image has-background-black">
+    <div *ngFor="let page of links$ | async" class="card post-card m-3">
+      <div class="card-image has-background-dark">
         <i class="far fa-newspaper fa-4x m-5 has-text-white"></i>
       </div>
 
       <div class="card-content">
         <div class="media">
           <div class="media-content">
-            <h5 class="title is-4 post-title" [title]="page.title">{{ page.title }}</h5>
-            <p class="post-description">{{ page.description }}</p>
-            <a [routerLink]="page.route" class="button is-outline-dark is-align-self-center">
-              <span class="icon-text">
-                <span class="icon"><i class="far fa-eye"></i></span>
-                <span>Read</span>
-              </span>
-            </a>
+            <h5 class="title is-4" [title]="page.title">{{ page.title }}</h5>
+            <p class="post-description">{{ page["description"] }}</p>
           </div>
         </div>
       </div>
+
+      <footer class="card-footer">
+        <a [routerLink]="page.route" class="card-footer-item has-text-black">
+          <span class="icon-text">
+            <span class="icon"><i class="far fa-eye"></i></span>
+            <span>Read</span>
+          </span>
+        </a>
+      </footer>
     </div>
   </div>
 </div>

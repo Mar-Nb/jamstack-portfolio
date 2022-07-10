@@ -1,11 +1,7 @@
-.post-card {
-  width: 290px;
-  height: 360px;
-}
+.post-card { width: 290px; }
 
-.post-title {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 20ch;
+.card-footer-item:hover {
+  background-color: hsl(0, 0%, 21%);
+  color: hsl(0, 0%, 100%) !important;
+  transition: 0.5s;
 }

@@ -1,6 +1,6 @@
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<nav class="navbar is-spaced has-shadow" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a *ngIf="bio$ | async as bio" class="navbar-item has-text-weight-bold" routerLink="/">{{ bio.firstName + " " + bio.lastName }}</a>
+    <a *ngIf="bio$ | async as bio" class="navbar-item has-text-weight-bold is-size-5" routerLink="/">{{ bio.firstName + " " + bio.lastName }}</a>
 
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
       <span aria-hidden="true"></span>
@@ -11,10 +11,10 @@
 
   <div id="navbarMenu" class="navbar-menu">
     <div class="navbar-end">
-      <button type="button" class="button is-inverted is-dark has-text-weight-bold"
+      <a class="navbar-item is-inverted is-dark has-text-weight-bold"
         *ngFor="let item of menuItems"
         [routerLink]="(isHome$ | async) ? item.homePath : item.pagePath"
-        [fragment]="(isHome$ | async) ? item.fragment : ''">{{ item.title }}</button>
+        [fragment]="(isHome$ | async) ? item.fragment : ''">{{ item.title }}</a>
     </div>
   </div>
 </nav>
